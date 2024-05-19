@@ -1,58 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!--- self closing tab-->
+    <!-- Self closing tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      h1 {
+        color: crimson;
+      }
+ 
+      .title {
+        color: orange;
+      }
+    </style>
   </head>
   <body>
+    <h1>Welcome to the app</h1>
+    <h2 id="sub-heading">Welcome to the app</h2>
+    <h3 class="title">Welcome to the app</h3>
+    <h4 class="title">Welcome to the app</h4>
+    <h5 class="title">Welcome to the app</h5>
+    <h6>Welcome to the app</h6>
+    <button onclick="clicked()">click</button>
+
+    <br />
+    <br />
+ 
+    <h3>Check for driving test</h3>
+    <input type="text" placeholder="Enter your age" />
+    <button>Check</button>
+ 
+    <!-- src - source | linked -->
+    <!-- <script src="fundamentals.js"></script> -->
+    <!-- <script src="basic-loops.js"></script> -->
     <script>
-    //   var student = {
-    //     name: "Tonika",
-    //     batch: 3,
-    //   };
-    //   console.log(student.name + " is in batch" + student.batch);
+      var h2 = document.getElementById("sub-heading");
+      console.log(h2.innerText);
+      h2.innerText = "This is super cool"; // update your html
 
-
-
-            //   Task
-        function movieUrl(domain, genre, year) {
-            return `http://${domain }?genre=${genre}&year=${year}`;
-        }
-
-        console.log(movieUrl("imdb.com", "thriller", 2020))
-
-        // Array destructuring
-        const [, t1, t2, t3 = 80] = [100, 200, null];
- 
-        console.log(t1, t2, t3); //200,null,80
-
-        let t1 = [80, 90];
-        let t2 = [50, 60];
-        let t3 = [...t1, ...t2];
-        console.log(t3);
-        //   [80, 90, 50, 60]
- 
-        //   Math operation
-        console.log(Math.max(6, 7, 4)); // Accepts n no. of argument
- 
-        let heights = [120, 140, 190, 80, 170]; // object
-        //   console.log(
-        //     Math.max(heights[0], heights[1], heights[2], heights[3], heights[4])
-        //   );
-        console.log(Math.max(heights)); // NaN
-        console.log(Math.max(...heights)); // 190
- 
-        //   ... rest
-        function own_max(...nums) {
-        // code
-        return nums;
-        }
-        console.log(own_max(5, 6, 10));
-        console.log(own_max(5, 6, 10, 7, 80, 60));
+      var titles=document.getElementsByClassName("title");
+      console.log(titles);
+      for(title of titles){
+        console.log(title.innerText);
+      }
+      let i=0;
+      function clicked(i){
+        i=i+1;
+        console.log("You clicked the button");
+      }
     </script>
   </body>
 </html>
+ 
 <!-- To create boilerplate code -->
 <!-- !<tab> -->
+ 
