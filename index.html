@@ -23,13 +23,16 @@
     <h5 class="title">Welcome to the app</h5>
     <h6>Welcome to the app</h6>
     <button onclick="clicked()">click</button>
+    <p id="clicked_times"></p>
+   
 
     <br />
     <br />
  
     <h3>Check for driving test</h3>
-    <input type="text" placeholder="Enter your age" />
-    <button>Check</button>
+    <input type="text" placeholder="Enter your age" id="age" />
+    <button onclick="check()">Check</button>
+    <p id="result"></p>
  
     <!-- src - source | linked -->
     <!-- <script src="fundamentals.js"></script> -->
@@ -45,10 +48,54 @@
         console.log(title.innerText);
       }
       let i=0;
+      let clickedbutton=0;
       function clicked(i){
-        i=i+1;
-        console.log("You clicked the button");
+        clickedbutton++
+        document.getElementById("clicked_times").innerText=`You clicked the button ${clickedbutton}`;
       }
+
+      // const age=document.getElementById("age")
+      // function check(){
+      //   if (age.value>=18) {
+      //     result.innerText="You are eligible to drive"
+      //   }
+      //   else{
+      //     result.innerText="You are not eligible to drive"
+      //   }
+      // }
+
+      const age=document.getElementById("age")
+      function check(){
+        result.innerText=age.value>18 ? "Eligible" : "Not Eligible";
+      }
+
+      class Car {
+        constructor(name, engine, wheels, doors) {
+          this.name = name;
+          this.engine = engine;
+          this.wheels = wheels;
+          this.doors = doors;
+        }
+ 
+        horn() {
+          return `${this.name} says Vroom Vroom!!!`;
+        }
+      }
+ 
+      ferrari = new Car("Ferrari", "v8", 4, 2); // object (instance)
+      alto = new Car("Alto", "v4", 4, 4); // object
+      console.log(ferrari);
+      console.log(alto);
+      console.log(typeof Car, typeof ferrari, typeof alto);
+
+      class Item { constructor(name, quantity) { this.name = name; this.quantity = quantity; this.constructor.count++; } static count = 0; 
+      static getCount() { 
+        return Item.count;
+       } } 
+      let pen = new Item('Pen', 5); 
+      let notebook = new Item('notebook', 10); 
+      console.log(Item.getCount()); // 2
+
     </script>
   </body>
 </html>

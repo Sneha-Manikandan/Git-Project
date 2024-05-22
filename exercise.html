@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Class inheritance</h2>
+    <p id="demo"></p>
+    <script>
+      
+    class Animal{
+        constructor(name)
+        {
+            this.name = name;
+        }
+    
+        speak(){
+            return "Some sound";
+        }
+
+        run(){
+            return "🐶 wags tail!!";
+        }
+    }
+    class Dog extends Animal{
+        constructor(name, speed){
+            super(name) ; //Base class constructor
+            this.speed = speed;
+        }
+    
+        run(){
+            return "🐶 wags tail!!";
+        }
+        speak(){
+            return "Woof!! 🐕";
+        }
+        speed_bonus(){
+            return `${this.name} is running at ${this.speed * 2}Km/hr`;
+        }
+    }
+    let toby = new Animal("toby");
+    document.getElementById("demo").innerHTML=toby.speak();
+    document.getElementById("demo").innerHTML=toby.run();
+    console.log(toby.speak());
+    console.log(toby.run());
+    let maxy = new Dog("maxy", 20);
+    // document.getElementById("demo").innerHTML=maxy.run();
+    // document.getElementById("demo").innerHTML=maxy.speed_bonus();
+    //print(maxy.speed_bonus())
+    console.log(maxy.run());
+    console.log(maxy.speed_bonus())
+    </script>
+</body>
+</html>
+
